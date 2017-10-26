@@ -1,0 +1,22 @@
+{
+  "presets": [
+    ["es2015", { "modules": false }],
+    "stage-0",
+    "react",
+    "airbnb",
+    "next/babel"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-class-properties",
+    "transform-decorators-legacy",
+    "transform-object-assign",
+    "transform-object-rest-spread",
+    [
+      "wrap-in-js",
+      {
+        "extensions": ["css$", "scss$"]
+      }
+    ]
+  ]
+}

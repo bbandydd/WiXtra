@@ -1,0 +1,47 @@
+{
+  "name": "WiXtra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-plugin-wrap-in-js": "^1.1.1",
+    "css-loader": "^0.28.7",
+    "glob": "^7.1.2",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "next": "^4.1.3",
+    "node-sass": "^4.5.3",
+    "normalize.css": "^7.0.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-loader": "^2.0.8",
+    "raw-loader": "^0.5.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-airbnb": "^2.4.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-native-modules": "^6.9.4",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
