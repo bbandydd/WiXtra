@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import stylesheet from './Footer.scss';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  color: pink;
+  font-size: 50px;
+`;
 
 export default class Footer extends Component {
   render() {
     return (
-      <div className="footer">
-        <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-        <div className="title">
+      <div>
+        <Title>
           This is Footer
-        </div>
+        </Title>
       </div>
     );
   }

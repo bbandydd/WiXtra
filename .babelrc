@@ -12,11 +12,6 @@
     "transform-decorators-legacy",
     "transform-object-assign",
     "transform-object-rest-spread",
-    [
-      "wrap-in-js",
-      {
-        "extensions": ["css$", "scss$"]
-      }
-    ]
+    ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ]
   ]
 }

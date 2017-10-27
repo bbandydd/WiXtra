@@ -1,2 +1,1 @@
-export Header from './Layout/Header/Header';
-export Footer from './Layout/Footer/Footer';
+export App from './Layout/App/App';

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import stylesheet from './Header.scss';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  color: pink;
+  font-size: 50px;
+`;
 
 export default class Header extends Component {
   render() {
     return (
-      <div className="header">
-        <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-        <div className="title">
-          This is Header2
-        </div>
+      <div>
+        <Title>
+          This is Header
+        </Title>
       </div>
     );
   }
