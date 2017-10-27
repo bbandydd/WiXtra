@@ -1,17 +1,14 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import { Header, Footer } from '../components';
+import { Header, Footer } from 'components';
 
 export default class MyDocument extends Document {
-  static getInitialProps ({ renderPage }) {
-    const sheet = new ServerStyleSheet()
-    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
-    const styleTags = sheet.getStyleElement()
-    return { ...page, styleTags }
-  }
-
   render() {
+    const sheet = new ServerStyleSheet();
+    const main = sheet.collectStyles(<Main />);
+    const styleTags = sheet.getStyleElement();
+
     return (
       <html>
         <Head>
@@ -20,7 +17,7 @@ export default class MyDocument extends Document {
           {this.props.styleTags}
         </Head>
         <body>
-          <Main />
+          { main }
           <NextScript />
         </body>
       </html>

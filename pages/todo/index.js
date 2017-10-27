@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { App } from '../../components';
+import Layout from 'layouts/Main';
 import styled from 'styled-components';
 
 const Title = styled.h1`
@@ -7,7 +7,7 @@ const Title = styled.h1`
   font-size: 50px;
 `;
 
-@App
+@Layout
 export default class Todo extends Component {
   render() {
     return (

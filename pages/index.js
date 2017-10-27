@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-import { App } from '../components';
+import Layout from 'layouts/Main';
 import styled from 'styled-components';
 
 const Title = styled.h1`
@@ -8,13 +8,13 @@ const Title = styled.h1`
   font-size: 50px;
 `;
 
-@App
+@Layout
 export default class Home extends Component {
   render() {
     return (
       <div>
         <Title>
-          This is Home Pag2e2
+          This is Home Page
         </Title>
       </div>
     )
