@@ -1,5 +1,5 @@
 import Koa from 'koa';
-import Router from 'koa-router';
+import koaRouter from 'koa-router';
 import next from 'next';
 import cors from 'koa-cors';
 import convert from 'koa-convert';
@@ -15,7 +15,7 @@ const handle = app.getRequestHandler();
 app.prepare()
 .then(() => {
   const server = new Koa();
-  const router = new Router();
+  const router = new koaRouter();
 
   const db = mongoose.createConnection(['mongodb://', configs.mongodb.ip, '/', configs.mongodb.dbname].join(''));
 
@@ -40,8 +40,8 @@ app.prepare()
 
   server.use(convert(cors(configs.cors)));
   // server apis
-  const serverRoutes = require('./server/routes/hello').default;
-  server.use(serverRoutes.routes());
+  const serverRoutes = require('./server/routes').default;
+  server.use(serverRoutes);
   // client apis
   server.use(router.routes());
   server.use(router.allowedMethods());

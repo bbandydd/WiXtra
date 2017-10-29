@@ -1,8 +1,8 @@
-import Router from 'koa-router';
+import koaRouter from 'koa-router';
 import KoaBody from 'koa-bodyparser';
 import { graphqlKoa, graphiqlKoa } from 'apollo-server-koa';
 
-const router = Router({
+const router = koaRouter({
   prefix: '/api'
 });
 
