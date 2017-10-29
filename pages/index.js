@@ -14,7 +14,7 @@ export default class Home extends Component {
     return (
       <div>
         <Title>
-          This is Home Page
+          This is Home Page2233
         </Title>
       </div>
     )
