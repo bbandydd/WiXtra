@@ -1,7 +1,8 @@
-const koa = require('koa');
-const Router = require('koa-router');
-const next = require('next');
-const routes = require('./routes');
+import Koa from 'koa';
+import Router from 'koa-router';
+import next from 'next';
+import routes from './routes';
+import configs from './configs';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -10,7 +11,7 @@ const handle = app.getRequestHandler();
 
 app.prepare()
 .then(() => {
-  const server = new koa();
+  const server = new Koa();
   const router = new Router();
 
   router.get('/api/test', async ctx => {
@@ -32,8 +33,8 @@ app.prepare()
   })
 
   server.use(router.routes());
-  server.listen(3000, (err) => {
+  server.listen(configs.port, (err) => {
     if (err) throw err;
-    console.log('> Ready on http://localhost:3000');
+    console.log(`> Ready on http://localhost:${configs.port}`);
   });
 });
