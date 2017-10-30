@@ -13,7 +13,7 @@ export default class Todo extends Component {
     return (
       <div>
         <Title>
-          This is Todo123
+          This is Todo
         </Title>
       </div>
     )
