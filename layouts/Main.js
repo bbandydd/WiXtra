@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { ThemeProvider }  from 'styled-components';
+import { Provider } from "react-redux";
+import styled, { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
+import configureStore from 'redux_flow/store';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -19,22 +20,26 @@ const Main = styled.main`
   padding: 40px 0;
 `;
 
+const store = configureStore();
+
 export default function(ComposedComponent) {
   class Layout extends Component {
     render() {
       return (
-        <ThemeProvider theme={theme}>
-          <Wrapper>
-            <Header />
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+            <Wrapper>
+              <Header />
 
-            <main>
-              <ComposedComponent {...this.props}/>
-            </main>
+              <main>
+                <ComposedComponent {...this.props}/>
+              </main>
 
-            <Footer />
+              <Footer />
 
-          </Wrapper>
-        </ThemeProvider>
+            </Wrapper>
+          </ThemeProvider>
+        </Provider>
       );
     }
   }

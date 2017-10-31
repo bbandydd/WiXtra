@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Head from 'next/head';
 import Layout from 'layouts/Main';
 import styled from 'styled-components';
@@ -9,12 +10,18 @@ const Title = styled.h1`
 `;
 
 @Layout
+@connect(
+  state => ({
+    todo: state.todo
+  })
+)
 export default class Home extends Component {
   render() {
     return (
       <div>
         <Title>
-          This is Home Page
+          <p>This is Home Page</p>
+          <p>Todo length: {this.props.todo.length}</p>
         </Title>
       </div>
     )
