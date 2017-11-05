@@ -22,18 +22,21 @@ const Main = styled.main`
 
 const store = configureStore();
 
-export default function(ComposedComponent) {
+export default function(WrappedComponent) {
   class Layout extends Component {
     render() {
+      const a = this.props;
+      const b = WrappedComponent;
+      debugger;
       return (
         <Provider store={store}>
           <ThemeProvider theme={theme}>
             <Wrapper>
               <Header />
 
-              <main>
-                <ComposedComponent {...this.props}/>
-              </main>
+              <Main>
+                <WrappedComponent {...this.props}/>
+              </Main>
 
               <Footer />
 
@@ -43,6 +46,8 @@ export default function(ComposedComponent) {
       );
     }
   }
+
+  Layout.getInitialProps = WrappedComponent.getInitialProps;
 
   return Layout;
 }

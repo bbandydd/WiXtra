@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Head from 'next/head';
 import Layout from 'layouts/Main';
 import styled from 'styled-components';
+import { Link } from 'routes';
 
 const Title = styled.h1`
   color: ${props => props.theme.primary_brand};
@@ -23,6 +24,9 @@ export default class Home extends Component {
           <p>This is Home Page</p>
           <p>Todo length: {this.props.todo.length}</p>
         </Title>
+        <Link route="about" params={{ name: 'Andy' }}>
+          <button>Andy page</button>
+        </Link>
       </div>
     )
   }

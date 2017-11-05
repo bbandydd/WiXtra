@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'next/link';
+import { Link } from 'routes';
 import styled from 'styled-components';
 
 const HeaderTag = styled.header`
@@ -23,7 +23,7 @@ export default class Header extends Component {
   render() {
     return (
       <HeaderTag>
-        <Link href='/'><a>Home</a></Link> |
+        <Link href='/' prefetch><a>Home</a></Link> |
         <Link href='/todo' prefetch><a>todo</a></Link> |
       </HeaderTag>
     )
