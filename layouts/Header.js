@@ -19,10 +19,15 @@ const HeaderTag = styled.header`
   }
 `;
 
+const Logo = styled.img`
+  width: 50px;
+`;
+
 export default class Header extends Component {
   render() {
     return (
       <HeaderTag>
+        <Logo src="/static/images/logo.png" alt="" />
         <Link href='/' prefetch><a>Home</a></Link> |
         <Link href='/todo' prefetch><a>todo</a></Link> |
       </HeaderTag>

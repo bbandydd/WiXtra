@@ -25,9 +25,6 @@ const store = configureStore();
 export default function(WrappedComponent) {
   class Layout extends Component {
     render() {
-      const a = this.props;
-      const b = WrappedComponent;
-      debugger;
       return (
         <Provider store={store}>
           <ThemeProvider theme={theme}>
