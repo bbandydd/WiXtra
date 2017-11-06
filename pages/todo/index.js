@@ -18,6 +18,12 @@ const Title = styled.h1`
   }
 )
 export default class Todo extends Component {
+  static async getInitialProps() {
+    const url = 'https://raw.githubusercontent.com/bbandydd/React_Redux_Todolist/gh-pages/initial.json';
+    const data = await fetch(url).then(res => res.json());
+    return { data };
+  }
+
   state = {
     text: ''
   }
@@ -40,7 +46,7 @@ export default class Todo extends Component {
 
   render() {
     const { text } = this.state;
-    const { todo } = this.props;
+    const { todo, data } = this.props;
 
     return (
       <div>
@@ -55,6 +61,9 @@ export default class Todo extends Component {
           {
             todo.map(item => <p>{item.text}</p>)
           }
+        </div>
+        <div>
+          {JSON.stringify(this.props.data)}
         </div>
       </div>
     )
