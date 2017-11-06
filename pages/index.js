@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import withRedux from 'next-redux-wrapper';
+import configureStore from 'redux_flow/store';
 import Head from 'next/head';
 import Layout from 'layouts/Main';
 import styled from 'styled-components';
@@ -10,12 +11,14 @@ const Title = styled.h1`
   font-size: 50px;
 `;
 
-@Layout
-@connect(
+
+@withRedux(
+  configureStore,
   state => ({
     todo: state.todo
   })
 )
+@Layout
 export default class Home extends Component {
   render() {
     return (

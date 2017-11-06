@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import withRedux from 'next-redux-wrapper';
+import configureStore from 'redux_flow/store';
 import { todoActions } from 'redux_flow/actions';
 import Layout from 'layouts/Main';
 import styled from 'styled-components';
@@ -9,16 +10,18 @@ const Title = styled.h1`
   font-size: 50px;
 `;
 
-@Layout
-@connect(
+@withRedux(
+  configureStore,
   state => ({
     todo: state.todo
-  }), {
+  }),
+  {
     ...todoActions
   }
 )
+@Layout
 export default class Todo extends Component {
-  static async getInitialProps() {
+  static async getInitialProps() {;
     const url = 'https://raw.githubusercontent.com/bbandydd/React_Redux_Todolist/gh-pages/initial.json';
     const data = await fetch(url).then(res => res.json());
     return { data };
