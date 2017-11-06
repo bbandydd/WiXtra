@@ -15,13 +15,12 @@ const Title = styled.h1`
   state => ({
     todo: state.todo
   }),
-  {
-    ...todoActions
-  }
+  { ...todoActions }
 )
 @Layout
 export default class Todo extends Component {
-  static async getInitialProps() {;
+  static async getInitialProps({ store }) {
+    store.dispatch(todoActions.addTodo({text: '9999'}));
     const url = 'https://raw.githubusercontent.com/bbandydd/React_Redux_Todolist/gh-pages/initial.json';
     const data = await fetch(url).then(res => res.json());
     return { data };
